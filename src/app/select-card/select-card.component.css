@@ -1,0 +1,23 @@
+.hero-block{
+    display: inline-block;
+    margin: 50px;
+    border: 1px solid #42a4f4;
+    box-shadow: 10px 10px 20px #698ead;
+}
+
+.active{
+    border: 1px solid #e871e4;
+    box-shadow: 10px 10px 20px #590d56;
+}
+
+.caract{
+    color:  #42a4f4;
+    font-size: 22px;
+}
+
+.hero-name{
+    text-align: center;
+    color: #590d56;
+    font-size: 35px;
+    box-shadow: 10px 10px 20px #590d56;
+}

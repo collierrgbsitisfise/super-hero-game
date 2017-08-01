@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="container">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <h3 [style.text-align]="'center'" [style.color]="'#8e7e05'">{{myHero.name}}</h3>
+            <img src="{{myHero.imgUrl}}" width="200px" height="200px" align="center">
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <img src="https://chto-eto-takoe.ru/uryaimg/f4842dcb685d490e2a43212b8072a6fe.png" width="200px" height="200px">
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <h3 [style.text-align]="'center'" [style.color]="'#8e7e05'">{{enemyHero.name}}</h3>
+            <img src="{{enemyHero.imgUrl}}" width="200px" height="200px" align="center">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <h1  [style.text-align]="'center'" [style.color]="'#dd2c08'">{{categorie}}</h1>
+              <a [routerLink]="['select-card']" *ngIf="isFightOver">
+                <button type="button" class="btn btn-block btn-success">try again</button>              
+              </a>
+                <button type="button" class="btn btn-block btn-warning" (click)="fight()" [disabled]="isDisabledButton" *ngIf="!isFightOver">fight</button>
+              <div class="loader" *ngIf="isFight"></div>
+              <h3 [style.text-align]="'center'" *ngIf="isFightOver && isYouWinner">You Win ^__^</h3>
+              <h3 [style.text-align]="'center'" *ngIf="isFightOver && !isYouWinner">You Lose -__-</h3>              
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" (click)="fight()">
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

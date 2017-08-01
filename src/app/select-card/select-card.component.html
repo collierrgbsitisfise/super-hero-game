@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="hero-block" *ngFor="let hero of heroes" [class.active]="hero.name === selectedHero.name" (click)="selectedHero = hero">
+      <img src="{{hero.imgUrl}}" alt="" width="150" height="150">
+    </div>
+    <div class="info block">
+        <h3 class="hero-name">{{selectedHero.name}}</h3>
+        <span class="caract">adroitness</span>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [style.width]="selectedHero.adroitness + '%'" aria-valuenow="selectedHero.adroitness" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <span class="caract">force</span>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [style.width]="selectedHero.force + '%'" aria-valuenow="selectedHero.force" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <span class="caract">intelect</span>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [style.width]="selectedHero.intelect + '%'" aria-valuenow="selectedHero.intelect" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <a [routerLink]="['/fight',selectedHero.id]">
+          <button type="button" class="btn btn-primary btn-block">Select Hero</button>
+        </a>
+    </div>
+  </div>
+</div>
